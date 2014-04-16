@@ -1,0 +1,192 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#c1bdc1"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.vijay.currencyexchangerate.MainActivity$PlaceholderFragment" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="100dip"
+                android:layout_height="wrap_content"
+                android:text="From : "
+                android:textColor="#9933CC"
+                android:textSize="20dip"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/from_curencyrate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Enter Currency code .Ex:AED"
+                android:inputType="textCapWords"
+                android:singleLine="true"
+                android:textColor="#9933CC"
+                android:textSize="20dip" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dip"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="100dip"
+                android:layout_height="wrap_content"
+                android:text="Amount : "
+                android:textColor="#9933CC"
+                android:textSize="20dip"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/curencyamount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Enter Amount. Ex.1"
+                android:inputType="numberDecimal"
+                android:singleLine="true"
+                android:textColor="#9933CC"
+                android:textSize="20dip" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dip"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="100dip"
+                android:layout_height="wrap_content"
+                android:text="To : "
+                android:textColor="#9933CC"
+                android:textSize="20dip"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/to_curencyrate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Enter Currency code EX:INR"
+                android:singleLine="true"
+                android:textColor="#9933CC"
+                android:textSize="16dip" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dip"
+            android:orientation="horizontal" >
+
+            <Button
+                android:id="@+id/checkRate"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="Check Rate "
+                android:textColor="#9933CC"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/progress_layout"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="40dip"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:visibility="gone" >
+
+            <ProgressBar
+                android:id="@+id/progressBar2"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:layout_marginTop="30dp"
+                android:indeterminateDrawable="@drawable/progress"
+                android:progress="0" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Fetching data..."
+                android:textColor="#000000" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/result_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dip"
+            android:orientation="vertical"
+            android:visibility="gone" >
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dip"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:id="@+id/textview_fromlabel"
+                    android:layout_width="100dip"
+                    android:layout_height="wrap_content"
+                    android:text="INR =  "
+                    android:textColor="@color/textcolor_yel"
+                    android:textSize="@dimen/textoutput"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textview_fromresult"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1"
+                    android:textColor="@color/textcolor_yel"
+                    android:textSize="@dimen/textoutput"
+                    android:textStyle="bold" >
+                </TextView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="40dip"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:id="@+id/textview_tolabel"
+                    android:layout_width="100dip"
+                    android:layout_height="wrap_content"
+                    android:text="AED =  "
+                    android:textColor="@color/textcolor_yellow"
+                    android:textSize="@dimen/textoutput"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textview_toresult"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/textcolor_yellow"
+                    android:textSize="@dimen/textoutput"
+                    android:textStyle="bold" >
+                </TextView>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>
